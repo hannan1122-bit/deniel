@@ -26,11 +26,11 @@ controls.minPolarAngle = -Math.PI * 2;
 controls.update();
 
 const url = './OrangeSunriseArtPrint.jpg'
-
+let shirt;
 const loader = new GLTFLoader();
 const textureLoader = new THREE.TextureLoader();
 loader.load('./model.gltf', (model) => {
-  const shirt = model.scene.children[0].children[0].children[0].children[0].children[0];
+  shirt = model.scene.children[0].children[0].children[0].children[0].children[0];
   textureLoader.load(url, (tex) => {
     shirt.material = new THREE.MeshStandardMaterial({map: tex});
   });
@@ -44,11 +44,13 @@ dirLight.position.set(0, 10, 0);
 scene.add(dirLight)
 
 const render = () => {
-  requestAnimationFrame(render);
-  renderer.render(scene, camera);
+    requestAnimationFrame(render);
+    shirt.rotation.y+=0.02;
+    renderer.render(scene, camera);
 }
 render();
 function onWindowResize() {
+  
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
