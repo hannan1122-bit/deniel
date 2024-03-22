@@ -1,0 +1,29 @@
+/* Style for the container of the Three.js canvas */
+#canvas-container {
+    width: 100%; /* Take up the full width of the screen */
+    height: 100%; /* Take up the full height of the screen */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    background-color: gray;
+  }
+  
+  /* Apply styles to the Three.js canvas */
+  body{
+    background-color: gray;
+  }
+  canvas {
+    display: block; /* Make the canvas a block-level element */
+    width: 100%; /* Take up the full width of the container */
+    height: 100%; /* Take up the full height of the container */
+    background-color: gray;
+  }
+  
+  /* Media query for smaller screens (e.g., mobile phones) */
+  @media screen and (max-width: 768px) {
+    /* Adjust the size of the canvas for smaller screens */
+    canvas {
+      width: 100%; /* Take up the full width of the container */
+      height: 50vh; /* Set the height to 50% of the viewport height */
+      background-color: gray;
+    }
+  }
+  
