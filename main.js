@@ -32,7 +32,7 @@ const textureLoader = new THREE.TextureLoader();
 loader.load('./model.gltf', (model) => {
   shirt = model.scene.children[0].children[0].children[0].children[0].children[0];
   textureLoader.load(url, (tex) => {
-    shirt.material = new THREE.MeshStandardMaterial({map: tex});
+    shirt.material = new THREE.MeshStandardMaterial({map: tex, side: THREE.DoubleSide });
   });
   scene.add(model.scene)
 })
